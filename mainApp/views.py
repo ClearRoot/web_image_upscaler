@@ -8,7 +8,6 @@ import urllib.request
 import base64
 from io import BytesIO
 
-
 def preprocess_image(image):
   """ Loads image from path and preprocesses to make it model ready
       Args:
