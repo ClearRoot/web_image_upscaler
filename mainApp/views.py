@@ -42,9 +42,11 @@ def hello(request):
   return render(request, 'mainApp/main.html')
 
 def upscaler(request):
+  if request.method == "GET":
+    return render(request, 'mainApp/main.html')
+  
   model = hub.load("https://tfhub.dev/captain-pool/esrgan-tf2/1")
-  model = hub.load("https://tfhub.dev/captain-pool/esrgan-tf2/1")
-  img = urllib.request.urlopen("https://user-images.githubusercontent.com/12981474/40157448-eff91f06-5953-11e8-9a37-f6b5693fa03f.png").read()
+  img = request.FILES['imageFile'].read()
   hr_image = preprocess_image(img)
   fake_image = model(hr_image)
   fake_image = save_image(tf.squeeze(fake_image))
