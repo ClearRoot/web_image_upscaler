@@ -2,15 +2,19 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "adsf"
+RUN echo "adddddsf"
 
 RUN git clone https://github.com/ClearRoot/web_image_upscaler.git
 
 WORKDIR /home/web_image_upscaler/
 
+RUN pip install --upgrade pip
+
 RUN pip install -r requirements.txt
 
-RUN pip install --upgrade pip
+RUN pip install tensorflow
+
+RUN pip install --upgrade tensorflow-hub
 
 RUN pip install gunicorn
 
