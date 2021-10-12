@@ -9,9 +9,9 @@ document.getElementById('imageSelector').addEventListener('change', function (e)
     let elem = e.target;
 
     if (validateType(elem.files[0])) {
-        let preview = document.querySelector('#thumb');
+        let preview = document.getElementById('thumb');
         preview.src = URL.createObjectURL(elem.files[0]);
-        document.querySelector('#submit-div').style.display = 'block';
+        document.getElementById('submit-div').style.display = 'block';
         preview.style.display = 'inline';
         preview.style.width = '15rem';
         preview.style.height = '15rem';
@@ -19,9 +19,9 @@ document.getElementById('imageSelector').addEventListener('change', function (e)
             URL.revokeObjectURL(preview.src);
         }
     } else {
-        let preview = document.querySelector('#thumb');
+        let preview = document.getElementById('thumb');
         preview.style.display = 'none';
-        document.querySelector('#submit-div').style.display = 'none';
+        document.getElementById('submit-div').style.display = 'none';
         console.log('이미지 파일이 아닙니다.');
     }
 });
@@ -29,7 +29,7 @@ document.getElementById('imageSelector').addEventListener('change', function (e)
 // submit
 document.getElementById('submit-btn').addEventListener('click', function (e) {
     let elem = e.target;
-    let submitDiv = document.querySelector('#submit-div');
+    let submitDiv = document.getElementById('submit-div');
     
     let spinnerSpan = document.createElement("span");
     spinnerSpan.className = 'visually-hidden';
@@ -43,5 +43,6 @@ document.getElementById('submit-btn').addEventListener('click', function (e) {
     spinnerDiv.append(spinnerSpan);
 
     elem.style.display = 'none'
+    document.getElementById('imageSelector').style.display = 'none'
     submitDiv.append(spinnerDiv)
 });
