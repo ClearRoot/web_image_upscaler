@@ -4,7 +4,7 @@
 {% block content %}
 <main>
   <div class="d-md-flex flex-md-equal justify-content-evenly w-100 my-md-3 ps-md-3">
-    <div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 rounded text-center text-white overflow-hidden">
+    <div class="pt-3 px-3 pt-md-5 px-md-5 rounded text-center text-black overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-5">이미지 해상도를 늘려보세요</h2>
         <div class="d-md-flex flex-md-equal justify-content-evenly w-80 mt-5">
@@ -22,7 +22,8 @@
         </div>
       </div>
     </div>
-    <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 rounded text-center overflow-hidden">
+  </div>
+    <div class="pt-3 px-3 pt-md-5 px-md-5 rounded text-center overflow-hidden">
       <div class="my-3 p-3">
         <h2 class="display-5 mb-5">이미지를 선택하세요</h2>
         <form action="{% url 'upscaler' %}" method="post" enctype="multipart/form-data">
