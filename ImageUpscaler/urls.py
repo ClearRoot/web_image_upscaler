@@ -16,10 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from mainApp.views import hello, upscaler
+from mainApp.views import upscaler
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', hello, name='home'),
-    path('upscaler/', upscaler, name='upscaler'),
+    path('', upscaler, name='upscaler'),
 ]

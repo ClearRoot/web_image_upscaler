@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse
 
 from PIL import Image
 import tensorflow_hub as hub
@@ -38,9 +39,6 @@ def save_image(image):
 
 
 # Create your views here.
-def hello(request):
-  return render(request, 'mainApp/main.html')
-
 def upscaler(request):
   if request.method == "GET":
     return render(request, 'mainApp/main.html')
