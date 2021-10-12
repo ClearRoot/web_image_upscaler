@@ -2,8 +2,9 @@
 {% load static %}
 
 {% block content %}
+<body background="{% static 'backgroundimage.PNG' %}"></body>
 <main>
-  <div class="d-md-flex flex-md-equal justify-content-evenly w-100 my-md-3 ps-md-3">
+  <div class="d-md-flex flex-md-equal justify-content-evenly w-100 my-md-3 ps-md-3" >
     <div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 rounded text-center text-white overflow-hidden">
       <div class="my-3 py-3">
         <h2 class="display-5">이미지 해상도를 늘려보세요</h2>
@@ -13,6 +14,7 @@
             style="width: 250px; height: 250px;">
           <img src="data:image/jpeg;base64,{{ fake }}" class="img-fluid" alt="Super Resolution"
             style="width: 250px; height: 250px;">
+          <a href="data:image/jpeg;base64,{{ fake }}" download><button class="btn btn-secondary">이미지다운로드</button></a>
           {% else %}
           <img src="{% static 'Original Image.jpg' %}" class="img-fluid" alt="Original"
             style="width: 250px; height: 250px;">
