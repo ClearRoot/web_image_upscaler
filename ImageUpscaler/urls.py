@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from mainApp.views import hellow
+from mainApp.views import hello
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', hellow, name='home'),
+    path('', hello, name='home'),
 ]

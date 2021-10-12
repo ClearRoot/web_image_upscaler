@@ -38,7 +38,11 @@ def save_image(image):
 
 
 # Create your views here.
-def hellow(request):
+def hello(request):
+  return render(request, 'mainApp/main.html')
+
+def upscaler(request):
+  model = hub.load("https://tfhub.dev/captain-pool/esrgan-tf2/1")
   model = hub.load("https://tfhub.dev/captain-pool/esrgan-tf2/1")
   img = urllib.request.urlopen("https://user-images.githubusercontent.com/12981474/40157448-eff91f06-5953-11e8-9a37-f6b5693fa03f.png").read()
   hr_image = preprocess_image(img)
@@ -50,8 +54,3 @@ def hellow(request):
   fake = base64.b64encode(buffered.getvalue()).decode('utf-8')
   
   return render(request, 'mainApp/main.html', {'origin': origin, 'fake': fake})
-
-# def upscaler(request):
-#   model = hub.load("https://tfhub.dev/captain-pool/esrgan-tf2/1")
-  
-
