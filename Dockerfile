@@ -2,13 +2,16 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "asdfasdf"
+RUN echo "asdfasdsddfdfasdfsdfff"
 
-RUN git https://github.com/ClearRoot/web_image_upscaler.git
+RUN git clone https://github.com/ClearRoot/web_image_upscaler.git
 
-WORKDIR /home/web_image_upscaler
+WORKDIR /home/ImageUpscaler/
+
 
 RUN pip install -r requirements.txt
+
+RUN pip install --upgrade pip
 
 RUN pip install gunicorn
 
