@@ -2,12 +2,11 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "asdfasdsddfdfasdfsdfff"
+RUN echo "adsf"
 
 RUN git clone https://github.com/ClearRoot/web_image_upscaler.git
 
-WORKDIR /home/ImageUpscaler/
-
+WORKDIR /home/web_image_upscaler/
 
 RUN pip install -r requirements.txt
 
